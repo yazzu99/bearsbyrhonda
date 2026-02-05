@@ -1,10 +1,39 @@
-# Caddyfile Config for Bears By Rhonda
-# Add this to your main Caddyfile on the server
+pooliq.net {
+    # 1. API & Docs -> Backend
+    handle /api/* {
+        reverse_proxy backend:8000
+    }
+    handle /docs {
+        reverse_proxy backend:8000
+    }
+    handle /openapi.json {
+        reverse_proxy backend:8000
+    }
+    handle /static/* {
+        reverse_proxy backend:8000 {
+            header_down X-Debug-Backed-By "Backend"
+        }
+    }
 
+    # 2. Everything else -> Frontend (Next.js)
+    handle {
+        reverse_proxy frontend:3000
+    }
+}
+
+www.pooliq.net {
+    redir https://pooliq.net{uri}
+}
+
+yazzu.com {
+    reverse_proxy host.docker.internal:3001
+}
+
+# Bears By Rhonda
 bearsbyrhonda.com {
-    reverse_proxy localhost:3002
+    reverse_proxy host.docker.internal:3002
 }
 
 www.bearsbyrhonda.com {
-    reverse_proxy localhost:3002
+    redir https://bearsbyrhonda.com{uri}
 }
