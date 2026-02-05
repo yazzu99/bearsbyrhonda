@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bears-app:
+    container_name: bears-by-rhonda
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production

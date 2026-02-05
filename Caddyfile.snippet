@@ -1,0 +1,10 @@
+# Caddyfile Config for Bears By Rhonda
+# Add this to your main Caddyfile on the server
+
+bearsbyrhonda.com {
+    reverse_proxy localhost:3002
+}
+
+www.bearsbyrhonda.com {
+    reverse_proxy localhost:3002
+}
