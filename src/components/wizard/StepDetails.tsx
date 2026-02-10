@@ -153,6 +153,7 @@ export default function StepDetails() {
                                 <input
                                     type="text"
                                     placeholder="e.g. Dad 1955-2023"
+                                    maxLength={50}
                                     className="w-full rounded-lg border-2 border-primary/20 bg-white p-2 text-sm focus:border-primary focus:outline-none"
                                     value={currentBear.embroidery.text || ''}
                                     onChange={(e) => updateBear(currentBearIndex, {
@@ -168,11 +169,15 @@ export default function StepDetails() {
                         <h3 className="mb-2 font-bold text-foreground">Special Instructions</h3>
                         <textarea
                             rows={3}
+                            maxLength={500}
                             className="w-full rounded-xl border-2 border-secondary/20 bg-background p-3 text-sm focus:border-primary focus:outline-none"
                             placeholder="e.g. Keep the pocket on the chest..."
                             value={currentBear.specialRequest || ''}
                             onChange={(e) => updateBear(currentBearIndex, { specialRequest: e.target.value })}
                         />
+                        <div className="text-right text-xs text-secondary-foreground">
+                            {(currentBear.specialRequest?.length || 0)}/500
+                        </div>
                     </div>
                 </div>
             </div>

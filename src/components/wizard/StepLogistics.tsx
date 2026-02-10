@@ -24,6 +24,7 @@ export default function StepLogistics() {
                         <input
                             id="name"
                             type="text"
+                            maxLength={100}
                             className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
                             value={contact.name}
                             onChange={(e) => updateContact({ name: e.target.value })}
@@ -34,6 +35,7 @@ export default function StepLogistics() {
                         <input
                             id="email"
                             type="email"
+                            maxLength={100}
                             className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
                             value={contact.email}
                             onChange={(e) => updateContact({ email: e.target.value })}
@@ -44,6 +46,7 @@ export default function StepLogistics() {
                         <input
                             id="phone"
                             type="tel"
+                            maxLength={20}
                             className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
                             value={contact.phone}
                             onChange={(e) => updateContact({ phone: e.target.value })}
@@ -64,6 +67,7 @@ export default function StepLogistics() {
                         <textarea
                             id="address"
                             rows={3}
+                            maxLength={300}
                             className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
                             value={contact.address}
                             onChange={(e) => updateContact({ address: e.target.value })}
