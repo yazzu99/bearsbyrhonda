@@ -11,6 +11,7 @@
   "dependencies": {
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.8",
+    "jspdf": "^4.1.0",
     "lucide-react": "^0.344.0",
     "next": "14.2.3",
     "react": "^18.2.0",
@@ -19,6 +20,7 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@types/jspdf": "^2.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

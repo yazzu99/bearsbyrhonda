@@ -6,7 +6,7 @@ import { Truck, Info } from "lucide-react";
 export default function StepLogistics() {
     const { contact, updateContact, nextStep, prevStep } = useOrderStore();
 
-    const isComplete = contact.name && contact.email && contact.phone;
+    const isComplete = contact.name && contact.email && contact.phone && contact.address;
 
     return (
         <div className="space-y-8">
@@ -47,6 +47,27 @@ export default function StepLogistics() {
                             className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
                             value={contact.phone}
                             onChange={(e) => updateContact({ phone: e.target.value })}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="date" className="mb-1 block text-sm font-medium">Need By Date (Optional)</label>
+                        <input
+                            id="date"
+                            type="date"
+                            className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
+                            value={contact.needByDate || ''}
+                            onChange={(e) => updateContact({ needByDate: e.target.value })}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="address" className="mb-1 block text-sm font-medium">Return Shipping Address</label>
+                        <textarea
+                            id="address"
+                            rows={3}
+                            className="w-full rounded-lg border-2 border-secondary/20 p-3 focus:border-primary focus:outline-none"
+                            value={contact.address}
+                            onChange={(e) => updateContact({ address: e.target.value })}
+                            placeholder="Street, City, State, Zip"
                         />
                     </div>
                 </div>
