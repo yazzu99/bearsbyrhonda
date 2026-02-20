@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X, ShoppingBag } from "lucide-react";
@@ -20,18 +21,18 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background/80 backdrop-blur-md">
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2">
-                    <div className="rounded-full bg-primary/10 p-2">
-                        <span className="text-2xl">🧸</span>
+                <Link href="/" className="flex flex-col items-center gap-1 group">
+                    <div className="relative h-14 w-32 transition-transform duration-300 group-hover:scale-105">
+                        <Image
+                            src="/images/rhonda-logo.png"
+                            alt="BEARS by Rhonda Logo"
+                            fill
+                            className="object-contain"
+                        />
                     </div>
-                    <div className="flex flex-col">
-                        <span className="font-serif text-xl font-bold tracking-wide text-primary">
-                            BEARS by Rhonda
-                        </span>
-                        <span className="text-xs uppercase tracking-[0.2em] text-secondary">
-                            Handcrafted Memories
-                        </span>
-                    </div>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-secondary/80">
+                        Handcrafted Memories
+                    </span>
                 </Link>
 
                 {/* Desktop Nav */}

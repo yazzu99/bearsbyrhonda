@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Mail, Phone, MapPin } from "lucide-react";
 
@@ -7,10 +8,22 @@ export default function Footer() {
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                     {/* Brand */}
-                    <div className="space-y-4">
-                        <h3 className="font-serif text-xl font-bold text-primary">BEARS by Rhonda</h3>
+                    <div className="space-y-6">
+                        <div className="flex flex-col items-start gap-1">
+                            <div className="relative h-10 w-24">
+                                <Image
+                                    src="/images/rhonda-logo.png"
+                                    alt="BEARS by Rhonda Logo"
+                                    fill
+                                    className="object-contain object-left"
+                                />
+                            </div>
+                            <span className="text-[10px] font-medium uppercase tracking-[0.3em] text-secondary/80">
+                                Handcrafted Memories
+                            </span>
+                        </div>
                         <p className="max-w-xs text-sm text-secondary-foreground/80">
-                            Founded in 2019 (formerly Impact Crafts). We create handcrafted teddy bears from your cherished clothing, turning memories into tangible hugs.
+                            Founded in 2019. We create handcrafted teddy bears from your cherished clothing, turning memories into tangible hugs.
                         </p>
                         <div className="flex gap-4">
                             <a
